@@ -11,6 +11,24 @@ It pulls the various weather data about past days in winter, 2015. In a way that
 
 Also it contains several links pointing to trustful tourist information.
 
+### How To Use
+
+#### Main UI
+
+Top Nav bar serves as a starting point. There you will find "Plot", "Raw" and "More".
+
+##### Plot
+
+Here you may tweak various parameters for ploting functions, including date range, plot type and weather condition you're interested.
+
+##### Raw
+
+Here you can examine the raw data used here, presented in a data table that supports filtering and sorting.
+
+##### More
+
+Here you may find help documentation (this one) in "About" page and useful tourist information in "Visit" page.
+
 ### Reference
 
 During the development of this app, following links were consulted:

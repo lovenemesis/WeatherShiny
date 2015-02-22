@@ -34,7 +34,6 @@ shinyUI(navbarPage("Winter Weather",
                                                             "SeaLevelPressure" = "Mean_Sea_Level_PressurehPa",
                                                             "Visibility" = "Mean_VisibilityKm", "WindSpeed" = "Mean_Wind_SpeedKm_h",
                                                             "Precipitation" = "Precipitationmm", "CloudCover" = "CloudCover"),
-                                                selected = "Mean_Humidity"
                                                 )
                                     
                                 ),
