@@ -10,13 +10,13 @@ library(weatherData)
 library(ggplot2)
 library(dplyr)
 
-if(!exists("weatherXI")){
-    weatherXI <- getWeatherForDate(station_id = "ZLXY", start_date = "2014-11-01", end_date = "2015-01-31", station_type = "ID", opt_custom_columns = TRUE, custom_columns = c(3,6,9,12,15,18,20,21))
-    weatherXI <- mutate(weatherXI, Date = as.character(Date))
-}
+Sys.setlocale(category = "LC_ALL", locale = "en_US.utf8")
+
+weatherXI <- getWeatherForDate(station_id = "ZLXY", start_date = "2014-11-01", end_date = "2015-01-31", station_type = "ID", opt_custom_columns = TRUE, custom_columns = c(3,6,9,12,15,18,20,21))
+weatherXI <- mutate(weatherXI, Date = as.character(Date))
 
 shinyServer(function(input, output) {
-
+    
    subData <- reactive({
        filter(weatherXI, Date >= as.character(input$dates[1]) & Date <= as.character(input$dates[2]))[, c("Date", input$features)]
     })
@@ -35,7 +35,6 @@ shinyServer(function(input, output) {
   
   output$weatherTable <- renderDataTable({
      return(weatherXI)
-#       return(subData())
   })
 
 })

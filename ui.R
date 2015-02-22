@@ -9,6 +9,8 @@ library(shiny)
 require(ggplot2)
 library(markdown)
 
+Sys.setlocale(category = "LC_ALL", locale = "en_US.utf8")
+
 shinyUI(navbarPage("Winter Weather",
                    tabPanel("Plot",
                             sidebarLayout(
@@ -28,10 +30,11 @@ shinyUI(navbarPage("Winter Weather",
                                     
                                     selectInput(inputId = "features", label = "Condition",
                                                 choices = c("Temperature" = "Mean_TemperatureC",
-                                                            "Dew Point" = "MeanDew_PointC", "Humidity" = "Mean_Humidity",
-                                                            "Sea Level Pressure" = "Mean_Sea_Level_PressurehPa",
-                                                            "Visibility" = "Mean_VisibilityKm", "Wind Speed" = "Mean_Wind_SpeedKm_h",
-                                                            "Precipitation" = "Precipitationmm", "Cloud Cover" = "CloudCover")
+                                                            "DewPoint" = "MeanDew_PointC", "Humidity" = "Mean_Humidity",
+                                                            "SeaLevelPressure" = "Mean_Sea_Level_PressurehPa",
+                                                            "Visibility" = "Mean_VisibilityKm", "WindSpeed" = "Mean_Wind_SpeedKm_h",
+                                                            "Precipitation" = "Precipitationmm", "CloudCover" = "CloudCover"),
+                                                selected = "Mean_Humidity"
                                                 )
                                     
                                 ),
